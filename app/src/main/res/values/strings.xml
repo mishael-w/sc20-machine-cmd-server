@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Machine Command Server</string>
+    <string name="received_data">data receiver:</string>
+    <string name="uart0">/dev/ttyHSL0</string>
+    <string name="uart1">/dev/ttyHSL1</string>
+    <string name="serial_port_select">serial port select: </string>
+    <string name="send">send</string>
+    <string name="error">Invalid values</string>
+</resources>

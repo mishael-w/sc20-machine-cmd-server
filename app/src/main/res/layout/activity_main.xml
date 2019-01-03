@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context="com.qucetel.andrew.serialjnidemo.sample.MainActivity">
+
+    <RadioGroup android:id="@+id/radioGroup"
+        android:contentDescription="@string/serial_port_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:text="@string/uart0"
+            android:layout_width="366dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/uart0" />
+        <RadioButton
+            android:text="@string/uart1"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:id="@+id/uart1" />
+    </RadioGroup>
+    <TextView android:id="@+id/data_received"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/received_data"
+        android:textSize="12sp"
+        android:layout_weight="0.07" />
+
+    <ScrollView android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.69">
+        <TextView android:id="@+id/log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:textSize="12sp"
+            />
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2">
+        <Button
+            android:id="@+id/action"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_input"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText android:id="@+id/message"
+            android:layout_width="261dp"
+            android:layout_height="wrap_content"
+            android:capitalize="sentences"
+            android:autoText="true"
+            android:singleLine="true"
+            />
+
+        <Button
+            android:text="@string/send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/send" />
+
+    </LinearLayout>
+</LinearLayout>

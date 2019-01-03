@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
+    tools:context="com.qucetel.andrew.serialjnidemo.sample.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:orientation="horizontal"
+        android:weightSum="10">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:text="CONNECTION STATUS:"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:gravity="center_vertical"/>
+        <TextView
+            android:id="@+id/connection_status_txt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:gravity="center_vertical"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:text="HSL0:"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:background="@drawable/title_bg"
+        android:gravity="bottom"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="12"
+        android:orientation="horizontal"
+        android:weightSum="18">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:text="Serial Input Status:"
+            android:textSize="20sp"
+            android:gravity="center_vertical"/>
+        <TextView
+            android:id="@+id/hsl0_input_status_txt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5.3"
+            android:text="Idle"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+        <ImageView
+            android:id="@+id/hsl0_input_status"
+            android:padding="20dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.7"
+            android:src="@drawable/three_state_image"/>
+
+
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:text="HSL1:"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:background="@drawable/title_bg"
+        android:gravity="bottom"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="12"
+        android:orientation="horizontal"
+        android:weightSum="18">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:text="Serial Input Status:"
+            android:textSize="20sp"
+            android:gravity="center_vertical"/>
+        <TextView
+            android:id="@+id/hsl1_input_status_txt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5.3"
+            android:text="Idle"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+        <ImageView
+            android:id="@+id/hsl1_input_status"
+            android:padding="20dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.7"
+            android:src="@drawable/three_state_image"/>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="12"
+        android:orientation="horizontal"
+        android:background="@drawable/title_bg"
+        android:weightSum="18">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:text="Publish Report Status:"
+            android:textSize="20sp"
+            android:gravity="center_vertical"/>
+        <TextView
+            android:id="@+id/hsl0_publish_status_txt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5.3"
+            android:textSize="20sp"
+            android:text="Idle"
+            android:gravity="center"/>
+
+        <ImageView
+            android:id="@+id/hsl0_publish_status"
+            android:padding="20dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.7"
+            android:src="@drawable/three_state_image"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:text="last command received:"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:background="@drawable/title_bg"
+        android:gravity="bottom"
+        android:paddingLeft="0dp"/>
+    <TextView
+        android:id="@+id/command_received_txt"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="16"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:gravity="top"
+        android:text=""
+        android:paddingTop="10dp"/>
+
+
+
+</LinearLayout>
