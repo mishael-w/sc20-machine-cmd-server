@@ -3,6 +3,7 @@
     package="com.qucetel.andrew.serialjnidemo"
     android:sharedUserId="android.uid.system"
     >
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
     <application
@@ -18,6 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver android:name=".sample.BootCompleteReceiver" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
     </application>
-
 </manifest>
