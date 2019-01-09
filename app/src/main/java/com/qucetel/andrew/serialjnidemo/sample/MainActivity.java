@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity implements IMQTTCallback {
     TextView hsl0_input_status_txt;
     TextView hsl0_publish_status_txt;
     TextView hsl1_input_status_txt;
-
-
+    Uart mUart1;
+    Uart mUart2;
     @SuppressLint("MissingPermission")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +45,14 @@ public class MainActivity extends AppCompatActivity implements IMQTTCallback {
         setContentView(R.layout.activity_main2);
 
         // Serial ports setup
-        Uart mUart1 = new Uart();
+        mUart1 = new Uart();
         final UartRunnable uartRunnable = new UartRunnable(mUart1, new UIserialDataCallback());
         if (uartRunnable.openPort("/dev/ttyHSL0")) {
             uartRunnable.setSerialPortParams(115200,8,1,'n');
             new Thread(uartRunnable).start();
         }
 
-        Uart mUart2 = new Uart();
+        mUart2 = new Uart();
         final UartRunnable uartRunnable2 = new UartRunnable(mUart2, new UIserialDataCallback());
         if(uartRunnable2.openPort("/dev/ttyHSL1")) {
             uartRunnable2.setSerialPortParams(115200,8,1,'n');
@@ -168,6 +168,11 @@ public class MainActivity extends AppCompatActivity implements IMQTTCallback {
             switch (command.type) {
                 case Post.POST_TYPE_PERSONAL:
                     Log.i(LOG_TAG, "got personal post: " + cmd);
+                    if (command.destination == 1)
+                        mUart1.write(command.data.getBytes(), command.data.length());//write to hsl0;
+                    if (command.destination == 2)
+                        mUart2.write(command.data.getBytes(), command.data.length());// write to hsl1
+
                     break;
                 case Post.POST_TYPE_GLOBAL:
                     Log.i(LOG_TAG, "got global post: " + cmd);
